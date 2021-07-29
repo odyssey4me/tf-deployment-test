@@ -63,6 +63,10 @@ module=pata_acpi; sudo lsmod | grep -q $module && { sudo rmmod $module; echo "$m
 sudo leapp answer --add --section remove_pam_pkcs11_module_check.confirm=True
 export LEAPP_UNSUPPORTED=1
 
+# Remove the persistent network names actor from the Leapp process
+# https://bugzilla.redhat.com/show_bug.cgi?id=1983033
+sudo rm -f /usr/share/leapp-repository/repositories/system_upgrade/el7toel8/actors/persistentnetnamesdisable/actor.py
+
 #Red Hat Registration case
 #sudo rm -f /etc/yum.repos.d/* || true
 #sudo subscription-manager refresh

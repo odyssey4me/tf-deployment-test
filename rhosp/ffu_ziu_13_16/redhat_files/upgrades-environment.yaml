@@ -3,6 +3,7 @@ parameter_defaults:
   SkipRhelEnforcement: true
 
   LeappInitCommand: |
+    sudo rm -f /usr/share/leapp-repository/repositories/system_upgrade/el7toel8/actors/persistentnetnamesdisable/actor.py
     sudo cp -f /home/stack/rhel8.repo /etc/yum.repos.d/
     sudo rm -f /etc/yum.repos.d/local.repo
 
